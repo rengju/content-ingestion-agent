@@ -9,6 +9,16 @@ pip install -e ".[dev]"
 playwright install chromium
 ```
 
+## Dev Mode (no MongoDB or Pub/Sub required)
+
+```bash
+# File-based URL source + console publisher (uses data/input/urls.txt by default)
+URL_SOURCE=file MESSAGING_BACKEND=console scrapy crawl article_spider
+
+# Override the URL file
+URL_SOURCE=file MESSAGING_BACKEND=console FEED_FILE=data/input/custom.txt scrapy crawl article_spider
+```
+
 ## Run
 
 ```bash

@@ -2,15 +2,19 @@ import os
 
 
 class Settings:
-    # MongoDB
-    mongodb_uri: str = os.environ["MONGODB_URI"]
-    mongodb_db: str = os.environ["MONGODB_DB"]
-    mongodb_collection: str = os.environ["MONGODB_COLLECTION"]
+    # MongoDB (optional when URL_SOURCE=file)
+    mongodb_uri: str = os.getenv("MONGODB_URI", "")
+    mongodb_db: str = os.getenv("MONGODB_DB", "")
+    mongodb_collection: str = os.getenv("MONGODB_COLLECTION", "")
 
     # Messaging
     messaging_backend: str = os.getenv("MESSAGING_BACKEND", "pubsub")
     pubsub_topic: str = os.getenv("PUBSUB_TOPIC", "")
     dry_run: bool = os.getenv("DRY_RUN", "false").lower() == "true"
+
+    # URL source
+    url_source: str = os.getenv("URL_SOURCE", "mongo")  # "mongo" | "file"
+    feed_file: str = os.getenv("FEED_FILE", "data/input/urls.txt")
 
     # Crawler
     crawl_delay: float = float(os.getenv("CRAWL_DELAY", "1"))

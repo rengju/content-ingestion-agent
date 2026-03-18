@@ -1,18 +1,1 @@
-# Core
-pydantic>=2.0
-
-# Crawling
-scrapy>=2.11
-scrapy-playwright>=0.0.40
-playwright>=1.44
-
-# Parsing
-trafilatura>=1.12
-beautifulsoup4>=4.12
-lxml>=5.0
-
-# Database
-pymongo>=4.7
-
-# Messaging
-google-cloud-pubsub>=2.21
+-e ".[dev]"

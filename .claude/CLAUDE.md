@@ -37,7 +37,7 @@ An AI-agent-driven application development project that includes a Python-based 
 
 ## Project Structure
 
-```text
+```
 content-ingestion-agent/
 ├── .claude/
 │   ├── agents/
@@ -110,6 +110,7 @@ content-ingestion-agent/
 - use generic parser first (Trafilatura), plugins only if needed
 - all outputs must follow Article schema (see [output_schema.md](../docs/output_schema.md))
 - Playwright only when necessary
+- Print output message console if message bus is mocked
 
 ## Common Commands
 
@@ -122,3 +123,8 @@ See [commands.md](commands.md) for all common commands.
 - Respect robots.txt and site terms where applicable
 - Avoid aggressive crawling (rate limit requests)
 
+## Testing Rules
+- Write tests BEFORE implementation (TDD) when asked to add features
+- After writing a function, switch mindset: how would this break?
+- Test the contract (inputs/outputs) not the implementation details
+- If you wrote the code, explicitly look for edge cases you assumed away

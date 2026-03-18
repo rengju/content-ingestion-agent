@@ -1,9 +1,10 @@
 from typing import Iterator
 
+from content_ingestion_agent.crawler.url_source import UrlSource
 from content_ingestion_agent.models.url_item import UrlItem
 
 
-class MongoUrlSource:
+class MongoUrlSource(UrlSource):
     """Reads pending URLs from MongoDB and marks them done/failed after crawling."""
 
     def __init__(self, uri: str, db: str, collection: str) -> None:
