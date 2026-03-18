@@ -81,6 +81,7 @@ content-ingestion-agent/
 
 | Env Var | Description |
 |---------|-------------|
+| `MESSAGING_BACKEND` | Message bus backend: `pubsub` (default), future: `sqs`, `azure_servicebus` |
 | `MONGODB_URI` | Full MongoDB connection string (includes credentials) |
 | `MONGODB_DB` | Database name |
 | `MONGODB_COLLECTION` | Collection containing URLs to crawl |
